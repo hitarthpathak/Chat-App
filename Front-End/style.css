@@ -1,0 +1,191 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 1vw;
+    font-family: 'Times New Roman';
+}
+
+body {
+    height: 100%;
+    width: 100%;
+}
+
+.chat-app {
+    height: 100vh;
+    width: 100vw;
+    overflow: auto;
+}
+
+.chat-app-nav {
+    height: 10%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.chat-app-nav h1 {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(130, 130, 130, 0.200);
+}
+
+.chat {
+    height: 90%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.chat-control-box {
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    height: auto;
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(130, 130, 130, 0.200);
+}
+
+.chat-users-box {
+    height: auto;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.you-are-box {
+    height: auto;
+    width: auto;
+}
+
+.chatting-to-box {
+    height: auto;
+    width: auto;
+}
+
+.chat-buttons-box {
+    height: auto;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem
+}
+
+.chat-buttons-box button {
+    height: auto;
+    width: auto;
+    padding: 0.3rem;
+    cursor: pointer;
+}
+
+#chat-messages-box {
+    height: 100%;
+    width: 100%;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    overflow: auto;
+}
+
+.message-box {
+    border-radius: 0.5rem;
+    height: fit-content;
+    width: fit-content;
+    padding: 0.5rem;
+    background-color: rgba(130, 130, 130, 0.200);
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.message-box .message {
+    white-space: pre-wrap;
+}
+
+.message-box .message-meta-data {
+    height: auto;
+    width: auto;
+    text-align: end;
+}
+
+.current-user-message-box {
+    align-self: flex-end;
+}
+
+.another-user-message-box {
+    align-self: flex-start;
+}
+
+.chat-updates-box {
+    height: auto;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(130, 130, 130, 0.200);
+}
+
+.chat-update-message {
+    font-style: italic;
+}
+
+.message-control-box {
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+    height: auto;
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    gap: 1rem;
+    flex-direction: column;
+}
+
+.message-control-box .user-input-box {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-input-box textarea {
+    height: 100%;
+    width: 90%;
+    padding: 0.5rem;
+    outline: none;
+    resize: none;
+}
+
+.user-input-box button {
+    height: 100%;
+    width: 10%;
+    cursor: pointer;
+}
+
+.message-control-box .press-enter-to-send-box {
+    height: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.press-enter-to-send-box label {
+    height: auto;
+    width: auto;
+}

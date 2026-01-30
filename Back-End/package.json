@@ -1,0 +1,14 @@
+{
+  "name": "chat-app",
+  "version": "1.0.0",
+  "description": "A Full-Stack Chat App.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Hitarth Pathak",
+  "license": "ISC",
+  "dependencies": {
+    "ws": "^8.19.0"
+  }
+}

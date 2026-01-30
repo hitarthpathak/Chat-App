@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<head>
+
+    <title>Chat App</title>
+
+    <link rel="icon" href="../Images/Icon.png">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="chat-app">
+
+        <div class="chat-app-nav">
+
+            <h1>CHAT APP</h1>
+
+        </div>
+
+        <div class="chat">
+
+            <div class="chat-control-box">
+
+                <div class="chat-users-box">
+
+                    <div class="you-are-box">
+
+                        <span>You Are : </span>
+
+                        <span id="current-user-name"></span>
+
+                    </div>
+
+                    <span>|</span>
+
+                    <div class="chatting-to-box">
+
+                        <span>Chatting To : </span>
+
+                        <span id="another-user-name"></span>
+
+                    </div>
+
+                </div>
+
+                <div class="chat-buttons-box">
+
+                    <button id="join-chat-button" onclick="join_chat()">Join Chat</button>
+
+                </div>
+
+            </div>
+
+            <div id="chat-messages-box"></div>
+
+            <div class="message-control-box">
+
+                <div class="user-input-box">
+
+                    <textarea id="user-input" placeholder="Enter Your Message"></textarea>
+
+                    <button id="message-send-button" onclick="send_message()">Send</button>
+
+                </div>
+
+                <div class="press-enter-to-send-box">
+
+                    <input type="checkbox" id="press-enter-to-send">
+
+                    <label for="press-enter-to-send">Press Enter To Send</label>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+<script src="script.js"></script>
+
+</html>
