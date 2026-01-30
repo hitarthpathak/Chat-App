@@ -6,7 +6,7 @@ let user_input = document.getElementById('user-input');
 let message_send_button = document.getElementById('message-send-button');
 let press_enter_to_send = document.getElementById('press-enter-to-send');
 
-let socket = new WebSocket('ws://localhost:3000');
+let socket = new WebSocket("https://chat-app-ii65.onrender.com");
 let heartbeat;
 let current_user = "";
 let current_user_id = "";
