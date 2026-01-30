@@ -1,19 +1,46 @@
-const http = require('http');
-const WebSocket = require('ws');
+const http = require("http");
+const fs = require("fs");
+const WebSocket = require("ws");
 
-const server = http.createServer();
+const server = http.createServer((req, res) => {
+    let file = "";
+    if (req.url === "/" || req.url === "/index.html") file = "index.html";
+    else if (req.url === "/style.css") file = "style.css";
+    else if (req.url === "/script.js") file = "script.js";
+    else if (req.url === "/Icon.png") file = "Images/Icon.png";
+
+    if (file) {
+        fs.readFile(file, (err, data) => {
+            if (err) {
+                res.writeHead(404);
+                res.end("File Not Found");
+            } else {
+                let type = "text/html";
+                if (file === "style.css") type = "text/css";
+                if (file === "script.js") type = "application/javascript";
+                if (file === "Icon.png") type = "image/png";
+                res.writeHead(200, { "Content-Type": type });
+                res.end(data);
+            }
+        });
+    } else {
+        res.writeHead(404);
+        res.end("Not found");
+    }
+});
+
 const wss = new WebSocket.Server({ server });
 
 const chat_app_users = [];
 const already_active_user = {};
 
-wss.on('connection', (ws) => {
-    console.log('New Client Connected!');
+wss.on("connection", (ws) => {
+    console.log("New Client Connected!");
     let user_id = Date.now();
-    ws.on('message', (message) => {
+    ws.on("message", (message) => {
         try {
             let data = JSON.parse(message);
-            console.log('Received Message:', data);
+            console.log("Received Message : ", data);
             if (data.type == "heartbeat") {
                 console.log("Heartbeat Received From A User!");
                 return;
@@ -71,7 +98,7 @@ wss.on('connection', (ws) => {
         }
     });
 
-    ws.on('close', () => {
+    ws.on("close", () => {
         let user_index = chat_app_users.findIndex((user) => user.id == user_id);
         if (user_index >= 0) {
             let leaving_user = chat_app_users[user_index];
@@ -96,5 +123,5 @@ function broadcast(data) {
 
 const PORT = process.env.PORT || 3000;
 server.listen(PORT, () => {
-    console.log(`Server Is Listening On Port ${PORT}`);
+    console.log(`Server Is Listening On Port : ${PORT}!`);
 });
