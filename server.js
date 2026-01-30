@@ -7,7 +7,7 @@ const server = http.createServer((req, res) => {
     if (req.url === "/" || req.url === "/index.html") file = "index.html";
     else if (req.url === "/style.css") file = "style.css";
     else if (req.url === "/script.js") file = "script.js";
-    else if (req.url === "Images/Icon.png") file = "Images/Icon.png";
+    else if (req.url === "/Images/Icon.png") file = "Images/Icon.png";
 
     if (file) {
         fs.readFile(file, (err, data) => {
@@ -18,7 +18,7 @@ const server = http.createServer((req, res) => {
                 let type = "text/html";
                 if (file === "style.css") type = "text/css";
                 if (file === "script.js") type = "application/javascript";
-                if (file === "Icon.png") type = "image/png";
+                if (file.endsWith(".png")) type = "image/png";
                 res.writeHead(200, { "Content-Type": type });
                 res.end(data);
             }
